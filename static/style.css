@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.content {
+    margin: 20px;
+}
+
+.username {
+    float: right;
+}
+
+.flash {
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.flash.error {
+    background-color: #ffcccc;
+    color: #ff0000;
+}
+
+.flash.success {
+    background-color: #ccffcc;
+    color: #00cc00;
+}
+
+.product {
+    margin-bottom: 20px;
+}
+
+.product .name {
+    font-weight: bold;
+}
+
+.product .price {
+    color: #888;
+}
+
+.edit-link {
+    margin-right: 10px;
+}
+
+.delete-link {
+    color: #f00;
+}
+
+
+/*
+nav - это селектор элемента навигационного меню (обычно <nav>), к которому применяются стили.
+ul - это селектор элемента списка (unordered list), который является потомком элемента навигационного меню.
+li - это селектор элемента списка (list item), который является потомком элемента списка.
+
+<div> контейнер, который оборачивает элементы формы для группировки и стилизации
+
+*/

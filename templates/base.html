@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}My Online Store{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="/users" class="btn btn-primary">Users List</a></li>
+            {% if is_logged_in %}
+                <li><a href="{{ url_for('add_product') }}">Add Product</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                <li class="username">{{ '' }} <a href="{{ url_for('account') }}">{{ username }}</a></li>
+            {% else %}
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

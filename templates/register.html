@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+    <h1>Register</h1>
+    {% for cat, msg in get_flashed_messages(True) %}
+    <div class="flash {{cat}}">{{msg}}</div>
+    {% endfor %}
+
+    <form method="POST" action="{{ url_for('register') }}">
+        <input type="text" name="email" placeholder="Email"><br>
+        <input type="text" name="username" placeholder="Имя пользователя"><br>
+        <input type="password" name="password" placeholder="Пароль"><br>
+        <input type="password" name="confirm_password" placeholder="Подтвердите пароль"><br>
+        <input type="submit" value="Зарегистрироваться">
+    </form>
+    <p>Уже зарегистрированы? <a href="{{ url_for('login') }}">Войдите</a>.</p>
+{% endblock %}

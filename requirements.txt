@@ -1,0 +1,7 @@
+Flask==2.3.2
+Flask-SQLAlchemy==3.0.0
+Flask-OAuthlib==0.9.
+Flask-SocketIO==5.1.1
+requests==2.26.0
+websocket-client==1.2.1
+werkzeug==0.16.1

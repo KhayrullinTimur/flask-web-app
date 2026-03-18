@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Account</h1>
+
+  {% for cat, msg in get_flashed_messages(True) %}
+  <div class="flash {{cat}}">{{msg}}</div>
+  {% endfor %}
+
+  <form method="POST" action="{{ url_for('account') }}">
+    <div>
+      <label>Email:</label>
+      <input type="email" name="email" value="{{ user.email }}">
+    </div>
+    <div>
+      <label>Username:</label>
+      <input type="text" name="username" value="{{ user.username }}">
+    </div>
+    <div>
+      <label>Password:</label>
+      <input type="password" name="password">
+    </div>
+    <div>
+      <input type="submit" value="Save Changes">
+    </div>
+  </form>
+{% endblock %}
