@@ -1,0 +1,23 @@
+name: example CI/CD
+
+on:   # на какое действие триггериться
+  push:   # триггер на пуш
+    branches:
+      -main
+  workflow_dispatch:  # возможность ручного запуска
+
+jobs:   # какие работы выполнять, может быть несколько, можно с зависимостями
+  build_and_test:   # одна работа по сборке и тесту (название любое)
+    runs-on: ubuntu-latest  # на чём запускать
+
+    steps: # шаги действия
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+
+      - name: installing
+        run: pip install Flask pytest flask_sqlalchemy
+
+      - name: testing
+        run: test_models
